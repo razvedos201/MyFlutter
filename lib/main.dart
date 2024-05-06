@@ -13,7 +13,7 @@ class CardExampleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 237, 245, 207),
+        backgroundColor: Color.fromARGB(255, 137, 149, 94),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 209, 219, 151),
           title: const Text('English Card'),
@@ -45,7 +45,7 @@ class _CardExampleState extends State<CardExample> {
   bool cardSideEnglish = false;
   int count = 0;
   String image =
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/House_Sparrow_m_2892.jpg/1920px-House_Sparrow_m_2892.jpg';
+      '/assets/images/Koala.jpg';
   String title = 'Sparrow';
   Map<String, String> card = {
     'Sparrow':
@@ -87,7 +87,7 @@ class _CardExampleState extends State<CardExample> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Image.network(
+                    child: Image.asset(
                       image,
                       height: MediaQuery.of(context).size.width,
                       width: MediaQuery.of(context).size.width,
@@ -121,14 +121,14 @@ class _CardExampleState extends State<CardExample> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Image.network(
+                    child: Image.asset(
                       image,
                       height: MediaQuery.of(context).size.width,
                       width: MediaQuery.of(context).size.width,
                     ),
                   ),
                   Text(
-                    "Соловей",
+                    title,
                     style: const TextStyle(
                       fontSize: 50.0,
                       fontWeight: FontWeight.w700,
@@ -153,8 +153,8 @@ class _CardExampleState extends State<CardExample> {
         FloatingActionButton(
           onPressed: () {
             setState(() {
-              image = 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Musca.domestica.female.jpg';
-            title = "fly";
+              image = '/assets/images/Koala.jpg';
+            title = "Настя";
             });
             
           },
