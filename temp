@@ -1,0 +1,75 @@
+
+child: InkWell(
+splashColor: Colors.blue.withAlpha(70),
+
+onTap: () {
+debugPrint('Card tapped.');
+},
+child: const SizedBox(
+width: 400,
+height: 600,
+child: Text('A card that can be tapped'),
+
+),
+),
+
+
+
+
+
+int i = 0;
+    return SizedBox(
+      height: 500,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            cardSideEnglish ? false : true;
+            debugPrint('press');
+            count++;
+
+            var entries = card.entries.toList();
+            if(count >= entries.length) count = 0;
+            title = entries.elementAt(count).key;
+            image = entries.elementAt(count).value;
+
+          });
+        },
+        child: Card(
+          color: Colors.yellow[100],
+
+          elevation: 2.0,
+          //margin: EdgeInsets.all(50.0),
+          //margin: EdgeInsets.symmetric(horizontal: 100),
+
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          semanticContainer: true,
+
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Image.network(
+                  image,
+                  height: MediaQuery.of(context).size.width,
+                  width: MediaQuery.of(context).size.width,
+                ),
+              ),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 50.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+      )
+
+    ) ;
+
+
+  }
+
+  
